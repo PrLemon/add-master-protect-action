@@ -1,4 +1,4 @@
-# Hello world javascript action 3
+# Hello world javascript action 4
 
 This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
 
