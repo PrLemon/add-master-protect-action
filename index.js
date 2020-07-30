@@ -15,7 +15,8 @@ try {
       repo: github.context.repo.repo,
       title: 'New commit on master detected!',
       body: 'The commit was made by '+commiter
-    }); 
+    });
+    console.log("new issue"+newIssue+" and type is "+typeof(newIssue)); 
   }
   //end
 } catch (error) {
