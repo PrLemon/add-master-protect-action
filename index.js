@@ -8,9 +8,11 @@ try {
   // const time = (new Date()).toTimeString();
   // core.setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow
+  const token = core.getInput('mytoken');
+  const octokit = github.getOctokit(mytoken)
   const commiter = github.context.payload.commits[0].committer.username
   if (github.context.ref.includes("master")){
-    const newIssue = github.issues.create({
+    const newIssue = octokit.issues.create({
       ...context.repo,
       title: 'New commit on master detected!',
       body: 'The commit was made by '+commiter

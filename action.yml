@@ -1,10 +1,10 @@
 name: 'Commit Notify'
 description: 'When a commit is made, it creates an issue and assigns to repo owner'
-# inputs:
-#   who-to-greet:  # id of input
-#     description: 'Who to greet'
-#     required: true
-#     default: 'World'
+inputs:
+  mytoken:  # id of input
+    description: 'Who to greet'
+    required: true
+    default: ${{secrets.GITHUB_TOKEN}}
 # outputs:
 #   time: # id of output
 #     description: 'The time we greeted you'
