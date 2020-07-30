@@ -11,7 +11,7 @@ try {
   const token = core.getInput('mytoken');
   const octokit = github.getOctokit(token);
   const commiter = github.context.payload.commits[0].committer.username;
-  console.log("We here");
+  console.log(github.context.ref);
   // if (github.context.ref.includes("master")){
   //   const newIssue = octokit.issues.create({
   //     ...context.repo,
