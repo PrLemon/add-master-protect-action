@@ -9,7 +9,9 @@ try {
   core.setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow
   const str_context = JSON.stringify(github.context);
-  console.log("The Context Variable: "+str_context);
+  console.log("Payload is of Type "+typeof(github.context.payload));
+  console.log("The commiter is "+github.context.payload.commits[0].author.username+" and its of type "+typeof(github.context.payload.commits[0].author.username));
+  console.log("Repo Var is of Type "+typeof(github.context.repo));
   console.log("=========Context Var ENDS==========")
   //const payload = JSON.stringify(github.context.payload, undefined, 2)
   //console.log(`The event payload: ${payload}`);
