@@ -6,9 +6,10 @@ try {
   const octokit = github.getOctokit(token); //instantiate the octokit using the token
   //https://octokit.github.io/rest.js/v18
   //Use the functions described 
-  
+
   //Logic for creating an issue when a commit on master is detected!
   if (github.context.ref.includes("master")){
+    const commiter = github.context.payload.commits[0].committer.username;
     const newIssue = octokit.issues.create({
       owner: github.context.repo.owner,
       repo: github.context.repo.repo,
@@ -17,7 +18,6 @@ try {
     }); 
   }
   //end
-
 } catch (error) {
   core.setFailed(error.message);
 }
