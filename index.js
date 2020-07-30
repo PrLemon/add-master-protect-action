@@ -16,7 +16,7 @@ try {
       title: 'New commit on master detected!',
       body: 'The commit was made by '+commiter
     });
-    console.log("new issue"+newIssue+" and type is "+typeof(newIssue)); 
+    console.log("new issue"+JSON.stringify(newIssue)+" and type is "+typeof(newIssue)); 
   }
   //end
 } catch (error) {
