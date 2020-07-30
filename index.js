@@ -3,7 +3,8 @@ const github = require('@actions/github');
 
 try {
   const token = core.getInput('mytoken'); //get the user token from as an input from the Workflow file
-  const octokit = github.getOctokit(token); //instantiate the octokit using the token
+  //const octokit = github.getOctokit(token); //instantiate the octokit using the token
+  const octokit = new github.GitHub(token);
   //https://octokit.github.io/rest.js/v18
   //Use the functions described 
 
