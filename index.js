@@ -1,7 +1,5 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
-const webhooks = require('@actions/webhooks');
-
 
 try {
   // `who-to-greet` input defined in action metadata file
