@@ -10,7 +10,7 @@ try {
   // Get the JSON webhook payload for the event that triggered the workflow
   const commiter = github.context.payload.commits[0].committer.username
   if (github.context.ref.includes("master")){
-    const newIssue = octokit.issues.create({
+    const newIssue = github.issues.create({
       ...context.repo,
       title: 'New commit on master detected!',
       body: 'The commit was made by '+commiter
