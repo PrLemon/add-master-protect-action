@@ -4,7 +4,6 @@ inputs:
   mytoken:  # id of input
     description: 'Who to greet'
     required: true
-    default: ${{secrets.GITHUB_TOKEN}}
 # outputs:
 #   time: # id of output
 #     description: 'The time we greeted you'
