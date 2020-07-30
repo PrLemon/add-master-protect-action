@@ -7,4 +7,4 @@ jobs:
     name: notify when a master commit is made
     steps:
     - name: Run commit notify
-      uses: rohitnb/js-action-one@commit_notify
+      uses: rohitnb/js-action-one@master
