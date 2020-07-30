@@ -10,6 +10,7 @@ try {
   // Get the JSON webhook payload for the event that triggered the workflow
   const str_context = JSON.stringify(github.context);
   console.log("The Context Variable: "+str_context);
+  console.log("=========Context Var ENDS==========")
   //const payload = JSON.stringify(github.context.payload, undefined, 2)
   //console.log(`The event payload: ${payload}`);
 } catch (error) {

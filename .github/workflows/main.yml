@@ -13,6 +13,11 @@ jobs:
       uses: rohitnb/js-action-one@master
       with:
         who-to-greet: 'Mona the Octocat'
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const str_context2 = JSON.stringify(github.context);
+          console.log("Var scope retained?"+str_context);
+          console.log("github.context retained?"+str_context2)
     # Use the output from the `hello` step
     - name: Get the output time
       run: echo "The time was ${{ steps.hello.outputs.time }}"
