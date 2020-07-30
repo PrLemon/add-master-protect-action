@@ -12,13 +12,14 @@ try {
   const octokit = github.getOctokit(token);
   const commiter = github.context.payload.commits[0].committer.username;
   console.log(github.context.ref);
-  // if (github.context.ref.includes("master")){
-  //   const newIssue = octokit.issues.create({
-  //     ...context.repo,
-  //     title: 'New commit on master detected!',
-  //     body: 'The commit was made by '+commiter
-  //   }); 
-  // }
+  if (github.context.ref.includes("master")){
+    const newIssue = octokit.issues.create({
+      owner: context.repo.owner,
+      repo: context.repo.repo,
+      title: 'New commit on master detected!',
+      body: 'The commit was made by '+commiter
+    }); 
+  }
    
   //const payload = JSON.stringify(github.context.payload, undefined, 2)
   //console.log(`The event payload: ${payload}`);
