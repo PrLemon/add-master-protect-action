@@ -14,8 +14,8 @@ try {
   console.log(github.context.ref);
   if (github.context.ref.includes("master")){
     const newIssue = octokit.issues.create({
-      owner: context.repo.owner,
-      repo: context.repo.repo,
+      owner: github.context.repo.owner,
+      repo: github.context.repo.repo,
       title: 'New commit on master detected!',
       body: 'The commit was made by '+commiter
     }); 
