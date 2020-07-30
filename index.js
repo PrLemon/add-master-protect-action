@@ -9,8 +9,9 @@ try {
   // core.setOutput("time", time);
   // Get the JSON webhook payload for the event that triggered the workflow
   const token = core.getInput('mytoken');
-  const octokit = github.getOctokit(token)
-  const commiter = github.context.payload.commits[0].committer.username
+  const octokit = github.getOctokit(token);
+  const commiter = github.context.payload.commits[0].committer.username;
+  console.log("We here");
   if (github.context.ref.includes("master")){
     const newIssue = octokit.issues.create({
       ...context.repo,
