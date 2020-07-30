@@ -1,18 +1,10 @@
 on:
   push:
-  issues:
-    types: [opened]
 
 jobs:
-  hello_world_job:
+  commit-notify:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: notify when a master commit is made
     steps:
-    - name: Hello world action step
-      id: hello
-      uses: rohitnb/js-action-one@master
-      with:
-        who-to-greet: 'Mona the Octocat'
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+    - name: Run commit notify
+      uses: rohitnb/js-action-one@commit_notify
