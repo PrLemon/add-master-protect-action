@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  apply-branch-protections:
+    runs-on: ubuntu-latest
+    name: apply-branch-protections
+    steps:
+    - name: Apply Branch Protection
+      uses: PrLemon/add-master-protect-action@master
+      with:
+        mytoken: ${{secrets.GITHUB_TOKEN}}
+        required_approvers: 3
