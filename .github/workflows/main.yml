@@ -9,5 +9,4 @@ jobs:
     - name: Apply Branch Protection
       uses: PrLemon/add-master-protect-action@master
       with:
-        mytoken: ${{secrets.GITHUB_TOKEN}}
         required_approvers: 3

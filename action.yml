@@ -3,7 +3,8 @@ description: 'This action adds branch protection to the Master branch'
 inputs:
   mytoken:  # id of input
     description: 'Token'
-    required: true
+    required: false
+    default: ${{secrets.ORG_ADMIN_PAT}}
   required_approvers:
     description: 'Int: Required number of approvers'
     required: false
