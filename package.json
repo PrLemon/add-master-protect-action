@@ -1,5 +1,5 @@
 {
-  "name": "js-action-one",
+  "name": "add-master-protect-action",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rohitnb/js-action-one/issues"
+    "url": "https://github.com/PrLemon/add-master-protect-action/issues"
   },
-  "homepage": "https://github.com/rohitnb/js-action-one#readme"
+  "homepage": "https://github.com/PrLemon/add-master-protect-action#readme"
 }
