@@ -2,7 +2,7 @@ name: 'Apply branch protection to the master'
 description: 'This action adds branch protection to the Master branch'
 inputs:
   mytoken:  # id of input
-    description: 'Who to greet'
+    description: 'Token'
     required: true
   required_approvers:
     description: 'Int: Required number of approvers'

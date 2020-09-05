@@ -10,7 +10,7 @@ async function run() {
     //https://octokit.github.io/rest.js/v18
     //Use the functions described 
 
-    await octokit.request('PUT /repos/{owner}/{repo}/branches/{branch}/protection', {
+    const what = await octokit.request('PUT /repos/{owner}/{repo}/branches/{branch}/protection', {
       owner: github.context.repo.owner,
       repo: github.context.repo.repo,
       branch: 'master',
@@ -22,7 +22,8 @@ async function run() {
         required_approving_review_count: 3
       },
       restrictions: null
-    })
+    });
+    console.log("Are we here?"+JSON.stringify(what.data));
   } catch (error) {
     core.setFailed(error.message);
   }
