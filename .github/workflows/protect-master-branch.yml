@@ -5,10 +5,10 @@ on:
 jobs:
   create_commit:
     runs-on: ubuntu-latest
-    env:
-        REVIEWER_COUNT: 2
     steps:
     - name: Update branch protections
+      env:
+        REVIEWER_COUNT: 2
       run: |
         curl --location --request PUT 'https://api.github.com/repos/${{ github.repository }}/branches/master/protection' \
         --header 'Accept: application/vnd.github.luke-cage-preview+json' \
@@ -21,7 +21,7 @@ jobs:
         {
           "dismiss_stale_reviews": false,
           "require_code_owner_reviews": false,
-          "required_approving_review_count": ${{REVIEWER_COUNT}}
+          "required_approving_review_count": ${{env.REVIEWER_COUNT}}
         }, 
         "restrictions": null
         }'
