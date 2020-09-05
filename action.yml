@@ -1,12 +1,13 @@
-name: 'Commit Notify'
-description: 'When a commit is made, it creates an issue and assigns to repo owner'
+name: 'Apply branch protection to the master'
+description: 'This action adds branch protection to the Master branch'
 inputs:
   mytoken:  # id of input
     description: 'Who to greet'
     required: true
-# outputs:
-#   time: # id of output
-#     description: 'The time we greeted you'
+  required_approvers:
+    description: 'Int: Required number of approvers'
+    required: false
+    default: '1'
 runs:
   using: 'node12'
   main: 'index.js'
