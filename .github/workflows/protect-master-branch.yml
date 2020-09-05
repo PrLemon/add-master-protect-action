@@ -4,6 +4,8 @@ on:
 
 jobs:
   create_commit:
+    env:
+      REVIEWER_COUNT: 2
     runs-on: ubuntu-latest
     steps:
     - name: Update branch protections
@@ -19,7 +21,7 @@ jobs:
         {
           "dismiss_stale_reviews": false,
           "require_code_owner_reviews": false,
-          "required_approving_review_count": 5
+          "required_approving_review_count": ${{REVIEWER_COUNT}}
         }, 
         "restrictions": null
         }'
