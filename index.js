@@ -11,7 +11,7 @@ async function run() {
     //const octokit = github.getOctokit(token); //instantiate the octokit using the token
     //https://octokit.github.io/rest.js/v18
     //Use the functions described 
-    console.log("REPO!!!!"+github.context.repo.owner);
+    console.log("Token:"+token);
     const what = await octokit.request('PUT /repos/{owner}/{repo}/branches/{branch}/protection', {
       owner: github.context.repo.owner,
       repo: github.context.repo.repo,
